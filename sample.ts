@@ -12,7 +12,7 @@ const s3Client = new S3Client({
   region: 'us-east-1',
 });
 
-const BUCKETS_TO_LEAVE = [];
+const BUCKETS_TO_LEAVE: string[] = [];
 
 const deleteBucket = async (bucket: string): Promise<void> => {
   const listResults = await s3Client.send(new ListObjectVersionsCommand({
