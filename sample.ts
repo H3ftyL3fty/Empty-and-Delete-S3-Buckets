@@ -12,13 +12,7 @@ const s3Client = new S3Client({
   region: 'us-east-1',
 });
 
-const BUCKETS_TO_LEAVE = [
-  'amplify-amplifytodo-dev-120152-deployment',
-  'aws-codestar-us-east-1-632270695338',
-  'aws-codestar-us-east-1-632270695338-codestar-test-app',
-  'tkhatch-photobackup',
-  'trh-sharedfilesbackup',
-];
+const BUCKETS_TO_LEAVE = [];
 
 const deleteBucket = async (bucket: string): Promise<void> => {
   const listResults = await s3Client.send(new ListObjectVersionsCommand({
